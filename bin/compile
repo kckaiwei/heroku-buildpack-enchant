@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Paths.
+BUILD_DIR=$1
+
+# we need to put a bunch of symlinks in there later
+mkdir -p /app/.heroku/vendor
+
+# Switch to the repo's context.
+cd $BUILD_DIR
+
+# Restore old artifacts from the cache.
+mkdir -p .heroku/vendor
+
+echo "-----> Getting enchant"
+pushd $(mktemp -d)
+curl -s -L -o enchant-1.6.0.tar.gz https://analytics-p-junk.s3.amazonaws.com/enchant-1.6.0-source.tar.gz
+tar -xvzf enchant-1.6.0.tar.gz
+
+echo "-----> Building enchant"
+mkdir /app/enchant
+cd enchant-1.6.0
+./configure --prefix=/app/.heroku/vendor --with-aspell-prefix=$BUILD_DIR/vendor/aspell
+make
+
+echo "-----> Installing enchant"
+make install
+
+# add to path
+export PATH=$PATH:/app/.heroku/vendor/bin
+
+echo "-----> Enchant is here:"
+which enchant
+
+popd
