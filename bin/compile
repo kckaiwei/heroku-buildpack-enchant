@@ -2,15 +2,13 @@
 
 # Paths.
 BUILD_DIR=$1
+CACHE_DIR=$2
 
 # we need to put a bunch of symlinks in there later
 mkdir -p /app/.heroku/vendor
 
 # Switch to the repo's context.
 pushd $BUILD_DIR
-
-# Restore old artifacts from the cache.
-mkdir -p .heroku/vendor
 
 echo "-----> Getting enchant"
 pushd $(mktemp -d)
