@@ -4,7 +4,12 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-# we need to put a bunch of symlinks in there later
+echo "<--- BUILD_DIR"
+echo $BUILD_DIR
+
+echo "<--- CACHE_DIR"
+echo $CACHE_DIR
+
 mkdir -p /app/.heroku/vendor
 
 # Switch to the repo's context.

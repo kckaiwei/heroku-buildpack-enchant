@@ -1,1 +1,5 @@
 #!/usr/bin/env bash
+
+echo "-----> Enchant is still here:"
+which enchant
+echo "<-----"
