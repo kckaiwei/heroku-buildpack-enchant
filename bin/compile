@@ -7,6 +7,11 @@ CACHE_DIR=$2
 mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/vendor/enchant
 
+ENCHANT_DIR = .heroku/enchant
+mkdir -p .heroku
+mkdir -p $ENCHANT_DIR
+
+
 pushd $CACHE_DIR
 
 echo "-----> Getting enchant"
@@ -15,14 +20,14 @@ tar -xvzf enchant-1.6.0.tar.gz
 
 echo "-----> Building enchant"
 cd enchant-1.6.0
-./configure --prefix=$BUILD_DIR/vendor/enchant --with-aspell-prefix=$BUILD_DIR/vendor/aspell
+./configure --prefix=$ENCHANT_DIR --with-aspell-prefix=$BUILD_DIR/vendor/aspell
 make
 
 echo "-----> Installing enchant"
 make install
 
 # add to path
-export PATH=$PATH:/app/vendor/enchant/bin
+export PATH=$PATH:$ENCHANT_DIR/bin
 
 echo "-----> Enchant is here:"
 which enchant

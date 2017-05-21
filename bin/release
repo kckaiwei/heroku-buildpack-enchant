@@ -5,5 +5,5 @@
 cat <<EOF
 ---
 config_vars:
-PATH: /app/vendor/enchant/bin:$PATH
+PATH: $ENCHANT_DIR/bin:$PATH
 EOF
