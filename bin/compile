@@ -28,4 +28,3 @@ echo "-----> Enchant is here:"
 which enchant
 
 popd
-popd
