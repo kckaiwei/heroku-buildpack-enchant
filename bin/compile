@@ -7,8 +7,8 @@ CACHE_DIR=$2
 mkdir -p $BUILD_DIR/vendor
 mkdir -p $BUILD_DIR/vendor/enchant
 
-ENCHANT_DIR = .heroku/enchant
-mkdir -p .heroku
+ENCHANT_DIR = /app/.heroku/enchant
+mkdir -p /app/.heroku
 mkdir -p $ENCHANT_DIR
 
 
