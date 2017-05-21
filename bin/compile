@@ -22,7 +22,7 @@ echo "-----> Installing enchant"
 make install
 
 # add to path
-export PATH=$PATH:/app/.heroku/vendor/enchant/bin
+export PATH=$PATH:/app/vendor/enchant/bin
 
 echo "-----> Enchant is here:"
 which enchant
