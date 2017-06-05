@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-# bin/release <build-dir>
-
-
 cat <<EOF
 ---
 config_vars:
-PATH: $ENCHANT_DIR/bin:$PATH
+PATH: /app/enchant/bin:$PATH
 EOF

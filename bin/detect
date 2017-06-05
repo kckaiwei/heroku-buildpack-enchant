@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
-echo "-----> Enchant installation starts"
+echo "This is Enchant detect"
