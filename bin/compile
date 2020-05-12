@@ -15,11 +15,11 @@ pushd $BUILD_DIR
 
 echo "-----> Getting enchant"
 pushd $BUILD_DIR
-curl -s -L -o enchant-1.6.0.tar.gz https://analytics-p-junk.s3.amazonaws.com/enchant-1.6.0-source.tar.gz
-tar -xvzf enchant-1.6.0.tar.gz
+curl -s -L -o enchant-2.2.8.tar.gz https://analytics-p-junk.s3.amazonaws.com/enchant-2.2.8.tar.gz
+tar -xvzf enchant-2.2.8.tar.gz
 
 echo "-----> Building enchant"
-cd enchant-1.6.0
+cd enchant-2.2.8
 ./configure --prefix=$HOME/enchant --with-aspell-prefix=$BUILD_DIR/vendor/aspell
 make
 
