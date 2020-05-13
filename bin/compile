@@ -20,6 +20,9 @@ tar -xvzf enchant-2.2.8.tar.gz
 
 echo "-----> Building enchant"
 cd enchant-2.2.8
+
+echo "-----> Hunspell Dictionary Dir"
+echo $BUILD_DIR/vendor/hunspell
 ./configure --prefix=$HOME/enchant --with-aspell-prefix=$BUILD_DIR/vendor/aspell --with-hunspell-prefix=$BUILD_DIR/vendor/hunspell --with-myspell-prefix=$BUILD_DIR/vendor/myspell
 make
 
